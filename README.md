@@ -1,6 +1,6 @@
 # ol-6.2.0-error
 
-## Test passed with ol@6.1.1 as specified in package.json
+## Test passes with ol@6.1.1 as specified in package.json
 
 * Run `npm install`
 * Run `nmp test`
