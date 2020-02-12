@@ -65,3 +65,40 @@ Time:        4.815s, estimated 7s
 Ran all test suites.
 npm ERR! Test failed.  See above for more details.
 ```
+
+## Test passes with ol@6.2.0 if ol/style/Style is not mocked
+
+* Comment lines in `Wtf.test.js`
+
+```
+import Wtf from '../src/Wtf'
+
+import Layer from 'ol/layer/Vector'
+import Style from 'ol/style/Style'
+
+// jest.mock('ol/style/Style')
+jest.mock('ol/layer/Vector')
+
+
+test('wtf', () => {
+  expect(new Wtf() instanceof Wtf).toBe(true)
+  expect(Layer).toHaveBeenCalledTimes(1)
+  // expect(Style).toHaveBeenCalledTimes(1)
+})
+```
+* Run `npm test`
+
+```
+
+> ol-6.2.0-error@0.0.1 test C:\Users\tkeane\git\ol-6.2.0-error
+> jest
+
+PASS __tests__/Wtf.test.js
+  √ wtf (5ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.673s, estimated 4s
+Ran all test suites.
+```
