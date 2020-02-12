@@ -1,0 +1,32 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+        "browser": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": ["openlayers"],
+    "rules": {
+        "no-tabs": ["error"],
+        "semi": 0,
+        "no-shadow": "error",
+        "comma-dangle": "error",
+        "import/no-extraneous-dependencies": 1,
+        "no-console": ["error", {
+            "allow" : ["info", "warn", "error"]
+        }],
+        "no-plusplus" : ["error", {
+            "allowForLoopAfterthoughts": true
+        }],
+        "camelcase": 0
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    [ "nyc", "./src/nyc" ]
+                ]
+            }
+        }
+    }
+}
